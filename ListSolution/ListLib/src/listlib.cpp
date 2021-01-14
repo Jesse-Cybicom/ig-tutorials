@@ -3,6 +3,12 @@
 
 // DO NOT REPEAT YOURSELF!
 
+// Jesse: Jerry you're rewriting your class here. This is wrong. You've already defined the class in the header
+// All you should be adding to your .cpp file is the implementation.
+// It can be written like this:
+// <return type> <class-name>::<method-name>(<parameters>)
+// e.g.
+// node* List::find_next(node* start, int item)
 class List
 {
 	node* first_;
