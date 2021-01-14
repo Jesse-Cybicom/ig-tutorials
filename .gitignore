@@ -1,0 +1,5 @@
+Debug/
+*.VC.db
+*.VC.opendb
+*.user
+*.suo
