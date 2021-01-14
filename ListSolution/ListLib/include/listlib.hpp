@@ -80,12 +80,21 @@ public MyType()
 
 class List
 {
+
+	node* first_;
+	node* last_;
+	int size_;
+
+private:
+	node* find_next(node* start, int item);
+
 public:
 	List();
+	List(int first_item);
 	~List();
 	node* find_item(int item);
 	node* find_last(int item);
-	node* add_item(int item);
+	void add_item(int item);
 	int get_size();
 	void remove(int item);
 	void print();

@@ -9,15 +9,8 @@
 // <return type> <class-name>::<method-name>(<parameters>)
 // e.g.
 // node* List::find_next(node* start, int item)
-class List
-{
-	node* first_;
-	node* last_;
-	int size_;
 
-
-private:
-	node* find_next(node* start, int item)
+	node* List::find_next(node* start, int item)
 	{
 		node* current_node = start;
 
@@ -31,8 +24,7 @@ private:
 	}
 
 
-public:
-	List()
+	List::List()
 		: first_(nullptr),
 		last_(nullptr),
 		size_(0)
@@ -40,14 +32,14 @@ public:
 	}
 
 
-	List(int first_item)
+	List::List(int first_item)
 		: List()
 	{
 		add_item(first_item);
 	}
 
 
-	~List()
+	List::~List()
 	{
 		while (first_ != nullptr) {
 			auto next_node = first_->next;
@@ -57,12 +49,12 @@ public:
 		}
 	}
 
-	node* find_item(int item)
+	node* List::find_item(int item)
 	{
 		return find_next(first_, item);
 	}
 
-	node* find_last(int item)
+	node* List::find_last(int item)
 	{
 		auto curr = first_;
 		auto last = first_;
@@ -78,7 +70,7 @@ public:
 	}
 
 
-	void add_item(int item)
+	void List::add_item(int item)
 	{
 		node* new_node = new node();
 		new_node->value = item;
@@ -96,12 +88,12 @@ public:
 		++size_;
 	}
 
-	int get_size()
+	int List::get_size()
 	{
 		return size_;
 	}
 
-	void remove(int item)
+	void List::remove(int item)
 	{
 		auto kill_node = find_item(item);
 
@@ -119,7 +111,7 @@ public:
 		}
 	}
 
-	void print()
+	void List::print()
 	{
 		auto curr = first_;
 		std::cout << "Size: " << size_;
@@ -131,6 +123,5 @@ public:
 		}
 	}
 
-	
-};
+
 
