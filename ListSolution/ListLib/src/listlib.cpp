@@ -127,6 +127,8 @@
 
 	node* List::operator[](int index)
 	{
+		// This is good safety measure, but what if it were not possible for index to be less than 0?
+		// Thankfully c++ has types that can never be negative i.e unsigned
 		if (index < 0)
 			return nullptr;
 		
@@ -139,6 +141,8 @@
 			i++;
 		}
 
+		// This check can be done at the beginning because we already know the size of the list.
+		// Doing the check before means we don't have to "search" through our entire list before knowing the index requested is not in our collection.
 		if (index > i)
 			return nullptr;
 		else
