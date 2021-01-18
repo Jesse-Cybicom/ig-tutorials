@@ -42,8 +42,17 @@ int main()
 		my_list.add_item(17);
 
 
-		std::cout << "my_list size is " << my_list.get_size() << "\n"; // should return 3
+		std::cout << "my_list size is " << my_list.get_size() << "\n"; 
 
+		print_item(my_list[-1]);
+		print_item(my_list[0]);
+		print_item(my_list[5]);
+		print_item(my_list[9]); 
+		print_item(my_list[10]);
+
+		
+
+		/*
 		my_list.print();
 
 		my_list.remove(34);
@@ -75,11 +84,11 @@ int main()
 		my_list.add_item(22);
 
 		std::cout << "\n Exiting scope: my_list\n";
+		*/
 	}
 
-	char ch;
-	std::cout << "Enter any char to exit: ";
-	std::cin >> ch;
+	std::cout << "Press any key to exit: ";
+	system("pause");
 
 	return 0;
 }

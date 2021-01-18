@@ -41,12 +41,14 @@
 
 	List::~List()
 	{
+		/*
 		while (first_ != nullptr) {
 			auto next_node = first_->next;
 			std::cout << "Deleting node with value " << first_->value << "\n";
 			delete first_;
 			first_ = next_node;
 		}
+		*/
 	}
 
 	node* List::find_item(int item)
@@ -123,5 +125,24 @@
 		}
 	}
 
+	node* List::operator[](int index)
+	{
+		if (index < 0)
+			return nullptr;
+		
+		auto aNode = first_;
+
+		int i=0;
+		while ((aNode->next != nullptr) && i < index)
+		{
+			aNode = aNode->next;
+			i++;
+		}
+
+		if (index > i)
+			return nullptr;
+		else
+			return aNode;
+	}
 
 

@@ -46,6 +46,8 @@ struct MyType
 	{
 		std::cout << "MyType with value " << id_ << " destroyed\n";
 	}
+
+	
 };
 
 
@@ -75,9 +77,6 @@ public MyType()
 // In a class everything is private by default
 
 
-
-
-
 class List
 {
 
@@ -98,5 +97,6 @@ public:
 	int get_size();
 	void remove(int item);
 	void print();
+	node* operator[](int index);
 };
 
